@@ -77,7 +77,7 @@ class testMxiGmp(unittest.TestCase):
         dr.clear_send(self.iptMsgContent,'12313121232')
         dr.click_time(dr.aBtnSearch,1)
         #下一页
-        self.next_page = '//*[@id="example1_next"]/a'
+        #self.next_page = '//*[@id="example1_next"]/a'
         self.assertEqual(dr.is_element_exist(self.next_page),False)
 
     def test_a_MXCX036(self):
@@ -98,7 +98,7 @@ class testMxiGmp(unittest.TestCase):
         dr.clear_send(id,'2018-05-01')
         #手机号输入框输入框
         self.iptMsgContent = (By.ID,'iptMsgContent')
-        dr.clear_send(self.iptMsgContent,'1355232153')
+        dr.clear_send(self.iptMsgContent,'13552321553')
         dr.click_time(dr.aBtnSearch,1)
         #number_1
         number_1 = (By.ID,'id')
@@ -450,13 +450,13 @@ class testMxiGmp(unittest.TestCase):
         #信息类型自动化001
         leixin = (By.XPATH,'//*[@id="selProduct"]/option[4]')
         dr.click_time(leixin,0.5)
-        dr.click_time(dr.aBtnSearch,1)
+        dr.click_time(dr.aBtnSearch,2)
 
         outdetailsExcle = (By.ID,'outdetailsExcle')
         timestr=time.strftime('%Y%m%d%H%M%S')
         self.driver.find_element_by_id('outdetailsExcle').click()
         print(timestr)
-        time.sleep(2)
+        time.sleep(3)
         # a = self.driver.find_element_by_id('iptDateRange_Start').get_attribute('value')
         #打开导出的文件
         s = xlrd.open_workbook('/Users/sy/Downloads/'+timestr+'.xls')
